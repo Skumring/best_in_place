@@ -1,7 +1,9 @@
 # Best In Place
 [![Build Status](https://secure.travis-ci.org/bernat/best_in_place.png)](http://travis-ci.org/bernat/best_in_place)
-**The Unobtrusive in Place editing solution**
+[![NPM Version](https://badge.fury.io/js/@didww%2Fbest_in_place.svg)](https://badge.fury.io/js/@didww%2Fbest_in_place)
+![npm](https://img.shields.io/npm/dm/@didww/best_in_place)
 
+**The Unobtrusive in Place editing solution**
 
 ## Description
 
@@ -22,6 +24,7 @@ Just begin including the gem in your Gemfile:
 
     gem 'best_in_place', '~> 3.0.1'
 
+##### Using assets via Sprockets
 After that, specify the use of the jquery and best in place
 javascripts in your application.js, and optionally specify jquery-ui if
 you want to use jQuery UI datepickers:
@@ -35,12 +38,41 @@ you want to use jQuery UI datepickers:
 If you want to use jQuery UI datepickers, you should also install and
 load your preferred jquery-ui CSS file and associated assets.
 
-Then, just add a binding to prepare all best in place fields when the document is ready:
+##### Using assets via Webpacker (or any other assets bundler) as a NPM module (Yarn package)
 
-    $(document).ready(function() {
-      /* Activating Best In Place */
-      jQuery(".best_in_place").best_in_place();
-    });
+Execute:
+
+    $ npm i @didww/best_in_place
+
+Or
+
+    $ yarn add @didww/best_in_place
+
+Or add manually to `package.json`:
+
+```json
+"dependencies": {
+  "@didww/best_in_place": "3.1.1"
+}
+```
+and execute:
+
+    $ yarn
+
+Add the following line into `app/javascript/active_admin.js`:
+
+```javascript
+import '@didww/best_in_place';
+```
+
+#### Initialization
+Then, just add a binding to prepare all best in place fields when the document is ready:
+```javascript
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+```
 
 You are done!
 

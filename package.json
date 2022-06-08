@@ -1,0 +1,36 @@
+{
+  "name": "@didww/best_in_place",
+  "version": "3.1.1",
+  "description": "BestInPlace is a jQuery script and a Rails helper that provide the method best_in_place to display any object field easily editable for the user by just clicking on it. It supports input data, text data, boolean data and custom dropdown data. It works with RESTful controllers.",
+  "main": "src/best_in_place.js",
+  "repository": "git@github.com:didww/best_in_place.git",
+  "author": "Bernat Farrero <bernat@itnig.net>",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didww/best_in_place.git"
+  },
+  "bugs": {
+    "url": "https://github.com/didww/best_in_place/issues"
+  },
+  "homepage": "https://github.com/didww/best_in_place#readme",
+  "keywords": [
+    "BestInPlace",
+    "editable",
+    "inputs"
+  ],
+  "dependencies": {
+    "jquery-autosize": "~>1.18.9"
+  },
+  "files": [
+    "src/**/*",
+    "vendor/jquery.purr.js"
+  ],
+  "scripts": {
+    "prepare_vendor": "cp vendor/assets/javascripts/jquery.purr.js vendor",
+    "prepare_src": "rm -rf src && mkdir src && cp lib/assets/javascripts/best_in_place_pack.js src/best_in_place.js",
+    "prepublishOnly": "npm run prepare_src && npm run prepare_vendor",
+    "postpack": "rm -rf src && rm vendor/jquery.purr.js"
+  }
+}
